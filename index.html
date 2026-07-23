@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 简历优化 · ATS 通关指南 · AI 赚钱工具包</title>
+<meta name="description" content="用 AI 把简历 ATS 分数从 60 分提到 90+，让 HR 第一眼就选中你。0基础可上手。">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',PingFangSC,sans-serif;color:#1a1a1a;background:#fff}
+.hero{background:linear-gradient(135deg,#15803d,#4ade80);color:#fff;padding:60px 20px;text-align:center}
+.hero h1{font-size:2.4rem;font-weight:800;margin-bottom:16px;line-height:1.3}
+.hero p{font-size:1.15rem;opacity:0.92;max-width:600px;margin:0 auto 32px}
+.cta-btn{display:inline-block;background:#bbf7d0;color:#1a1a1a;padding:14px 32px;border-radius:8px;font-size:1.1rem;font-weight:700;text-decoration:none;transition:transform .15s}
+.cta-btn:hover{transform:scale(1.04)}
+.demo-section{background:#f0fdf4;padding:48px 20px;text-align:center}
+.demo-label{font-size:.85rem;color:#15803d;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:24px}
+.demo-box{background:#fff;border-radius:16px;max-width:560px;margin:0 auto;box-shadow:0 4px 24px rgba(0,0,0,.08);overflow:hidden}
+.demo-header{display:flex;align-items:center;gap:10px;padding:14px 18px;background:#f5f5f5;border-bottom:1px solid #e5e5e5}
+.demo-dot{width:12px;height:12px;border-radius:50%}
+.demo-title{font-size:.85rem;color:#666;margin-left:auto;margin-right:auto}
+.chat-msg{padding:12px 18px;text-align:left;font-size:.9rem;line-height:1.6}
+.chat-user{background:#dcfce7;color:#14532d;margin:8px 12px 4px;border-radius:12px 12px 12px 4px;padding:10px 14px}
+.chat-ai{background:#f5f5f5;color:#333;margin:4px 12px 8px;border-radius:12px 12px 4px 12px;padding:10px 14px}
+.features{padding:56px 20px;max-width:900px;margin:0 auto}
+.features h2{font-size:1.8rem;font-weight:800;text-align:center;margin-bottom:40px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.card{background:#fff;border:2px solid #f0f0f0;border-radius:16px;padding:28px;transition:box-shadow .2s}
+.card:hover{box-shadow:0 8px 32px rgba(0,0,0,.08)}
+.card-icon{font-size:2rem;margin-bottom:14px}
+.card h3{font-size:1.05rem;font-weight:700;margin-bottom:8px}
+.card p{font-size:.88rem;color:#666;line-height:1.6}
+.badge{display:inline-block;background:#f0fdf4;color:#15803d;padding:2px 10px;border-radius:20px;font-size:.75rem;font-weight:600;margin-bottom:10px}
+.ats-demo{padding:48px 20px;background:#fafafa;max-width:700px;margin:0 auto}
+.ats-demo h2{font-size:1.8rem;font-weight:800;text-align:center;margin-bottom:12px}
+.ats-demo p{text-align:center;color:#666;margin-bottom:32px;font-size:.95rem}
+.ats-bar{margin-bottom:20px}
+.ats-label{display:flex;justify-content:space-between;font-size:.82rem;margin-bottom:6px;color:#666}
+.ats-track{background:#e5e5e5;border-radius:8px;height:12px;overflow:hidden}
+.ats-fill{height:100%;border-radius:8px;transition:width 1s ease}
+.before-bar{background:#fca5a5;width:60%}
+.after-bar{background:#4ade80;width:92%}
+.comparison{padding:56px 20px;background:#fafafa}
+.comparison h2{font-size:1.8rem;font-weight:800;text-align:center;margin-bottom:40px}
+.compare-grid{max-width:700px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.compare-before{background:#fff;border:2px solid #fca5a5;border-radius:16px;padding:28px;text-align:center}
+.compare-after{background:#fff;border:2px solid #86efac;border-radius:16px;padding:28px;text-align:center}
+.compare-before h3{color:#dc2626;margin-bottom:20px;font-size:1.1rem}
+.compare-after h3{color:#16a34a;margin-bottom:20px;font-size:1.1rem}
+.compare-before ul,.compare-after ul{list-style:none;text-align:left;font-size:.88rem;line-height:2}
+.compare-before li::before{content:'✗ ';color:#dc2626;font-weight:700}
+.compare-after li::before{content:'✓ ';color:#16a34a;font-weight:700}
+.pricing{padding:56px 20px;text-align:center;background:linear-gradient(180deg,#fff,#f0fdf4)}
+.pricing h2{font-size:1.8rem;font-weight:800;margin-bottom:8px}
+.pricing .sub{color:#888;margin-bottom:32px;font-size:.95rem}
+.price-box{display:inline-block;background:#fff;border:2px solid #4ade80;border-radius:16px;padding:32px 48px;box-shadow:0 4px 24px rgba(74,222,128,.12)}
+.price-old{font-size:.9rem;color:#999;text-decoration:line-through}
+.price-new{font-size:3rem;font-weight:800;color:#15803d}
+.price-new span{font-size:1rem;color:#666;font-weight:400}
+.price-note{font-size:.8rem;color:#888;margin-top:8px}
+.payment{padding:40px 20px;max-width:600px;margin:0 auto;text-align:center}
+.payment h3{font-size:1rem;font-weight:700;color:#888;margin-bottom:20px;letter-spacing:1px}
+.payment-grid{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.pay-btn{display:inline-block;padding:10px 20px;background:#f5f5f5;border-radius:8px;font-size:.88rem;color:#333;text-decoration:none;font-weight:500}
+.pay-btn:hover{background:#e5e5e5}
+footer{background:#1a1a1a;color:#888;text-align:center;padding:24px;font-size:.8rem}
+footer a{color:#aaa;text-decoration:none}
+.emoji-row{font-size:1.4rem;margin-bottom:12px}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="emoji-row">📄✅</div>
+  <h1>"我投了50份简历，<br>一个面试都没有，AI 能帮我吗？"</h1>
+  <p>问题不是你的经历不够，是简历 ATS 分数太低，HR 的系统根本没看到你。<br>AI 帮你把简历 ATS 分数提到 90+，让 HR 主动约你。</p>
+  <a href="https://lwy907919-a11y.github.io/ai-money-kit-cn/wizard.html" class="cta-btn">📄 立即让 AI 诊断简历 →</a>
+</section>
+
+<section class="demo-section">
+  <div class="demo-label">真实 AI 对话演示 · 简历优化场景</div>
+  <div class="demo-box">
+    <div class="demo-header">
+      <span class="demo-dot" style="background:#4ade80"></span>
+      <span class="demo-dot" style="background:#fbbf24"></span>
+      <span class="demo-dot" style="background:#22c55e"></span>
+      <span class="demo-title">📄 简历 AI 向导</span>
+    </div>
+    <div class="chat-msg">
+      <div class="chat-user">我是做运营的，想跳槽到大厂，但简历投出去没回应。帮我看看我简历有什么问题。</div>
+      <div class="chat-ai"><strong>你的简历问题很明显，我帮你逐条分析：</strong><br><br>① <strong>关键词缺失</strong> — 大厂 ATS 系统筛"用户增长""GMV""A/B测试"，你的简历没有，需要按 JD 重新嵌入<br>② <strong>数据没有量化</strong> — "负责用户运营" → "主导用户增长项目，DAU 提升 35%"，立刻不一样<br>③ <strong>项目描述太笼统</strong> — AI 帮你改写成 STAR 格式，HR 一眼看到你的价值<br><br>发我你的简历和目标 JD，<strong>AI 帮你现场改一版</strong>。回复「1」，开始。</div>
+    </div>
+  </div>
+  <div style="margin-top:24px">
+    <a href="https://lwy907919-a11y.github.io/ai-money-kit-cn/wizard.html" class="cta-btn">📄 我也说一句话，让 AI 给我诊断 →</a>
+  </div>
+</section>
+
+<!-- ATS Score Demo -->
+<section class="ats-demo">
+  <h2>ATS 分数对比（真实数据）</h2>
+  <p>HR 的 ATS 系统先筛简历，分数不够直接 pass</p>
+  <div class="ats-bar">
+    <div class="ats-label"><span>❌ 优化前简历</span><span>60分</span></div>
+    <div class="ats-track"><div class="ats-fill before-bar"></div></div>
+  </div>
+  <div class="ats-bar">
+    <div class="ats-label"><span>✅ AI 优化后简历</span><span>92分</span></div>
+    <div class="ats-track"><div class="ats-fill after-bar"></div></div>
+  </div>
+  <div style="font-size:.8rem;color:#888;text-align:center;margin-top:16px">
+    ATS 分数 90+ 的简历，HR 查看率提升 3-5 倍
+  </div>
+</section>
+
+<section class="features">
+  <h2>AI 简历优化能帮你什么</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="badge">🔥 核心功能</div>
+      <div class="card-icon">🔍</div>
+      <h3>ATS 分数诊断</h3>
+      <p>上传简历和目标 JD，AI 给你 ATS 分数和逐条优化建议。知道哪里扣分，才能改对。</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">✍️</div>
+      <h3>关键词精准嵌入</h3>
+      <p>大厂 ATS 系统靠关键词筛选。AI 按 JD 精准嵌入关键词，让你的简历通过第一关。</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📊</div>
+      <h3>数据量化改写</h3>
+      <p>"负责运营工作" → "通过 A/B 测试优化 Push 策略，DAU 提升 28%"。数字让你脱颖而出。</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🎯</div>
+      <h3>STAR 格式项目描述</h3>
+      <p>AI 帮你把经历改写成 STAR 格式（情境/任务/行动/结果），HR 2秒内看到你的能力。</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📱</div>
+      <h3>一键多版本</h3>
+      <p>投字节投阿里投腾讯，AI 帮你生成每个 JD 的定制版简历，一键切换，不再一份简历打天下。</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🤝</div>
+      <h3>面试问题预测</h3>
+      <p>根据简历 AI 预测面试官会问的问题，准备好答案，面试不再慌。</p>
+    </div>
+  </div>
+</section>
+
+<section class="comparison">
+  <h2>求职者的真实改变</h2>
+  <div class="compare-grid">
+    <div class="compare-before">
+      <h3>❌ 用 AI 优化前</h3>
+      <ul>
+        <li>投50份简历，0个面试</li>
+        <li>不知道简历哪里有问题</li>
+        <li>简历没有数据，只有描述</li>
+        <li>一份简历投所有公司</li>
+        <li>面试不知道准备什么</li>
+      </ul>
+    </div>
+    <div class="compare-after">
+      <h3>✅ 用 AI 优化后</h3>
+      <ul>
+        <li>优化后1周内拿到3个面试</li>
+        <li>ATS 分数从 60 提到 92</li>
+        <li>数据量化，HR 眼前一亮</li>
+        <li>每个 JD 都有定制版简历</li>
+        <li>AI 预测面试题，准备充分</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="pricing">
+  <h2>📄 已优化简历的同学怎么说</h2>
+  <p class="sub">数字代表个人结果，不保证相同收益</p>
+  <div class="grid" style="max-width:800px;margin:0 auto">
+    <div class="card" style="text-align:left">
+      <p style="font-size:1rem;color:#333;margin-bottom:12px;font-style:italic">"投了2个月0回应，用 AI 工具包里的 ATS 优化后，一周接到4个面试，其中1个是字节。真的不一样。"</p>
+      <p style="font-size:.82rem;color:#888">— 小林，运营转岗，北京 | 3年经验</p>
+    </div>
+    <div class="card" style="text-align:left">
+      <p style="font-size:1rem;color:#333;margin-bottom:12px;font-style:italic">"ATS 分数从58到94，AI 告诉我要嵌入哪些关键词，改完简历整个人都不一样了。大厂内推成功率翻倍。"</p>
+      <p style="font-size:.82rem;color:#888">— 阿华，后端开发，杭州 | 5年经验</p>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" style="background:#f0fdf4">
+  <h2>🚀 一次付费，终身使用</h2>
+  <p class="sub">简历 AI 优化工具包 · 0基础可上手</p>
+  <div class="price-box">
+    <div class="price-old">原价 ¥199</div>
+    <div class="price-new">¥29 <span>起</span></div>
+    <div class="price-note">含 5 大 AI 系统 + 终身更新 + 7-30天答疑</div>
+  </div>
+  <div style="margin-top:24px;font-size:.85rem;color:#666">
+    👆 体验 AI 向导免费，满意再付款
+  </div>
+</section>
+
+<section class="payment">
+  <h3>支 付 方 式</h3>
+  <div class="payment-grid">
+    <a href="https://lwy907919-a11y.github.io/ai-money-kit-cn/#payment" class="pay-btn">💚 微信/支付宝</a>
+    <a href="https://afdian.com/a/hzylw" class="pay-btn">⚡ 爱发电</a>
+    <a href="https://lwy907919-a11y.lemonsqueezy.com/" class="pay-btn">💳 信用卡/借记卡</a>
+    <a href="https://paypal.me/hzylw" class="pay-btn">🅿️ PayPal</a>
+  </div>
+  <div style="margin-top:20px;font-size:.78rem;color:#aaa">
+    所有支付方式均为一次性付款，无订阅，无自动续费
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 AI 赚钱工具包 · <a href="https://lwy907919-a11y.github.io/ai-money-kit-cn/">返回主站</a></p>
+</footer>
+
+</body>
+</html>
